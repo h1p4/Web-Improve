@@ -1,0 +1,3008 @@
+<!doctype html>
+<html lang="es">
+  <!-- Mirrored from swellfilms.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 09:43:49 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Swell Films — Fotografía y vídeo inmobiliario de lujo | Marbella &
+      Estepona
+    </title>
+    <meta
+      name="description"
+      content="Swell Films — Fotografía y vídeo cinematográfico para villas y apartamentos de lujo en Marbella y Estepona. +6 años creando contenido premium para las inmobiliarias más exclusivas de la Costa del Sol."
+    />
+    <meta
+      name="keywords"
+      content="fotografía inmobiliaria Marbella, video inmobiliario Estepona, fotógrafo villas lujo, real estate photography Marbella, Swell Films"
+    />
+    <meta
+      property="og:title"
+      content="Swell Films — Luxury Real Estate Photography & Film"
+    />
+    <meta
+      property="og:description"
+      content="Photography and cinematic video for luxury villas and apartments on the Costa del Sol."
+    />
+    <meta property="og:image" content="images/portfolio/villa-17.jpg" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="images/logo/favicon.png" />
+
+    <!-- Google Fonts: Inter (sans-serif limpia) + Playfair Display (serif editorial) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================
+       RESET & BASE
+    ============================ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        font-weight: 400;
+        color: #1a1a1a;
+        background: #fafaf7;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      img,
+      video,
+      iframe {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition:
+          color 0.25s ease,
+          opacity 0.25s ease;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      :root {
+        --bg: #fafaf7;
+        --bg-alt: #ffffff;
+        --bg-soft: #f3f1ec;
+        --text: #1a1a1a;
+        --text-soft: #6b6b6b;
+        --line: #e6e3dc;
+        --accent: #a38862; /* dorado tierra sutil */
+        --accent-dark: #8a7249;
+        --max: 1400px;
+      }
+
+      /* ============================
+       TIPOGRAFÍA
+    ============================ */
+      .display {
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        line-height: 1.1;
+      }
+      .overline {
+        font-size: 12px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--accent);
+      }
+      h2.display {
+        font-size: clamp(2rem, 5vw, 3.75rem);
+      }
+      h3 {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+      }
+      p {
+        color: var(--text-soft);
+        font-size: 1rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      section {
+        padding: 7rem 0;
+        position: relative;
+      }
+      @media (max-width: 768px) {
+        section {
+          padding: 4.5rem 0;
+        }
+        .container {
+          padding: 0 1.25rem;
+        }
+      }
+
+      /* Language switching */
+      body[data-lang="es"] .en {
+        display: none !important;
+      }
+      body[data-lang="en"] .es {
+        display: none !important;
+      }
+
+      /* ============================
+       NAV
+    ============================ */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1.25rem 2rem;
+        background: rgba(250, 250, 247, 0.82);
+        backdrop-filter: saturate(180%) blur(14px);
+        -webkit-backdrop-filter: saturate(180%) blur(14px);
+        border-bottom: 1px solid transparent;
+        transition:
+          border-color 0.3s ease,
+          padding 0.3s ease;
+      }
+      .nav.scrolled {
+        border-bottom-color: var(--line);
+        padding: 0.75rem 2rem;
+      }
+      .nav-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .nav-logo img {
+        height: 22px;
+        width: auto;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.25rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: 0.02em;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+      .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .lang-switch button {
+        color: var(--text-soft);
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.3rem;
+      }
+      .lang-switch button.active {
+        color: var(--text);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .lang-switch span {
+        color: var(--line);
+      }
+      .nav-cta {
+        background: var(--text);
+        color: #fff;
+        padding: 0.65rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .nav-cta:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+      .nav-burger {
+        display: none;
+        width: 28px;
+        height: 28px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+      }
+      .nav-burger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--text);
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+      body.menu-open .nav-burger span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      body.menu-open .nav-burger span:nth-child(2) {
+        opacity: 0;
+      }
+      body.menu-open .nav-burger span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      @media (max-width: 900px) {
+        .nav-burger {
+          display: flex;
+        }
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 80%;
+          max-width: 340px;
+          background: var(--bg);
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 6rem 2rem;
+          justify-content: flex-start;
+          transform: translateX(100%);
+          transition: transform 0.35s ease;
+          box-shadow: -20px 0 60px rgba(0, 0, 0, 0.08);
+        }
+        body.menu-open .nav-links {
+          transform: translateX(0);
+        }
+        .nav-links a {
+          font-size: 1.25rem;
+        }
+        .nav-cta {
+          display: none;
+        }
+      }
+
+      /* ============================
+       HERO
+    ============================ */
+      .hero {
+        min-height: 100svh;
+        min-height: 100vh;
+        padding: 9rem 0 4rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: var(--bg);
+        overflow: hidden;
+      }
+      .hero-grid {
+        max-width: var(--max);
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        .hero {
+          padding-top: 7rem;
+        }
+      }
+      .hero-text h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        margin: 1.5rem 0 1.75rem;
+      }
+      .hero-text h1 em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .hero-text p {
+        font-size: 1.125rem;
+        max-width: 500px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 1rem 2rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        border: 1px solid var(--text);
+        color: var(--text);
+      }
+      .btn-outline:hover {
+        background: var(--text);
+        color: #fff;
+      }
+      .hero-visual {
+        position: relative;
+        aspect-ratio: 4/5;
+        background: url("images/portfolio/villa-17.jpg") center/cover no-repeat;
+        border-radius: 2px;
+        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.25);
+      }
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 60%,
+          rgba(0, 0, 0, 0.15)
+        );
+      }
+      .hero-tag {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        z-index: 2;
+        color: #fff;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .hero-tag::before {
+        content: "— ";
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        color: var(--text-soft);
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 30px;
+        background: var(--text-soft);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          transform: scaleY(0.5);
+          transform-origin: top;
+          opacity: 0.3;
+        }
+        50% {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+      @media (max-width: 900px) {
+        .scroll-hint {
+          display: none;
+        }
+      }
+
+      /* ============================
+       SECTION HEADER
+    ============================ */
+      .sec-head {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .sec-head .overline {
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .sec-head h2 {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .sec-head p {
+        max-width: 560px;
+        margin: 1.25rem auto 0;
+      }
+
+      /* ============================
+       PORTFOLIO GRID — cuadrícula uniforme con proporción original
+    ============================ */
+      .portfolio {
+        background: var(--bg-alt);
+      }
+      .grid-masonry {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      @media (max-width: 1024px) {
+        .grid-masonry {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .grid-masonry {
+          grid-template-columns: 1fr;
+        }
+      }
+      .tile {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        background: #f0eee9;
+        border-radius: 2px;
+        display: block;
+      }
+      .tile img {
+        width: 100%;
+        height: auto; /* respeta la proporción original */
+        display: block;
+        transition: transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .tile:hover img {
+        transform: scale(1.04);
+      }
+      .tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 60%,
+          rgba(0, 0, 0, 0.2)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+      .tile:hover::after {
+        opacity: 1;
+      }
+
+      /* ============================
+       VIDEO SECTIONS
+    ============================ */
+      .cinematics {
+        background: var(--bg);
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .video-card {
+        position: relative;
+        overflow: hidden;
+        background: #000;
+        border-radius: 2px;
+        aspect-ratio: 16/9;
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.2);
+      }
+      .video-card iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .reels {
+        background: var(--bg-soft);
+      }
+      .reels-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+      }
+      @media (max-width: 1024px) {
+        .reels-row {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .reels-row {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+        }
+      }
+      .reel-card {
+        position: relative;
+        aspect-ratio: 9/16;
+        overflow: hidden;
+        background: #000;
+        border-radius: 2px;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+      }
+      .reel-card iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ============================
+       LITE YOUTUBE EMBED
+       (oculta branding de YouTube hasta el clic)
+    ============================ */
+      .yt-lite {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: #0a0a0a;
+        cursor: pointer;
+        display: block;
+        overflow: hidden;
+        font: inherit;
+      }
+      .yt-lite::after {
+        /* ligero degradado para que el botón siempre destaque */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0) 30%,
+          rgba(0, 0, 0, 0.25) 100%
+        );
+        pointer-events: none;
+        transition: background 0.4s ease;
+      }
+      .yt-lite-thumb {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+          filter 0.4s ease;
+      }
+      .yt-lite:hover .yt-lite-thumb {
+        transform: scale(1.04);
+        filter: brightness(0.92);
+      }
+      .yt-lite:hover::after {
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0) 25%,
+          rgba(0, 0, 0, 0.35) 100%
+        );
+      }
+      .yt-lite-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.94);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+          background 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+        pointer-events: none;
+      }
+      .yt-lite:hover .yt-lite-play {
+        transform: translate(-50%, -50%) scale(1.08);
+        background: #fff;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      }
+      .yt-lite-play svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--text);
+        margin-left: 4px; /* compensar centrado óptico del triángulo */
+      }
+      .reel-card .yt-lite-play {
+        width: 58px;
+        height: 58px;
+      }
+      .reel-card .yt-lite-play svg {
+        width: 18px;
+        height: 18px;
+        margin-left: 3px;
+      }
+      @media (max-width: 700px) {
+        .yt-lite-play {
+          width: 60px;
+          height: 60px;
+        }
+        .yt-lite-play svg {
+          width: 20px;
+          height: 20px;
+        }
+        .reel-card .yt-lite-play {
+          width: 48px;
+          height: 48px;
+        }
+        .reel-card .yt-lite-play svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      /* ============================
+       SERVICIOS
+    ============================ */
+      .services {
+        background: var(--bg-alt);
+      }
+      .svc-block {
+        margin-bottom: 4rem;
+      }
+      .svc-block:last-child {
+        margin-bottom: 0;
+      }
+      .svc-block-head {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1rem;
+      }
+      .svc-block-head h3 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: 2rem;
+        letter-spacing: -0.01em;
+      }
+      .svc-block-head .overline {
+        margin-left: auto;
+      }
+      .pkg-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .pkg-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pkg {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .pkg:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.15);
+        border-color: var(--accent);
+      }
+      .pkg.featured {
+        background: var(--text);
+        color: #fff;
+        border-color: var(--text);
+      }
+      .pkg.featured .pkg-tier {
+        color: var(--accent);
+      }
+      .pkg.featured .pkg-price small,
+      .pkg.featured .pkg-feature {
+        color: #cfcbc1;
+      }
+      .pkg.featured .pkg-feature svg {
+        stroke: var(--accent);
+      }
+      .pkg-tier {
+        font-size: 0.75rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+      .pkg-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: 1.25rem;
+      }
+      .pkg-price {
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.25rem;
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+      }
+      .pkg-price small {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: var(--text-soft);
+        letter-spacing: normal;
+        display: block;
+        margin-top: 0.25rem;
+        font-family: "Inter", sans-serif;
+      }
+      .pkg-features {
+        list-style: none;
+        margin: 2rem 0;
+        padding: 0;
+      }
+      .pkg-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+        color: var(--text-soft);
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .pkg.featured .pkg-feature {
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+      }
+      .pkg-feature svg {
+        flex-shrink: 0;
+        margin-top: 3px;
+        stroke: var(--accent);
+      }
+      .pkg-feature.disabled {
+        opacity: 0.35;
+        text-decoration: line-through;
+      }
+      .pkg-cta {
+        margin-top: auto;
+        display: inline-flex;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+        border: 1px solid currentColor;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        font-weight: 500;
+      }
+      .pkg:not(.featured) .pkg-cta:hover {
+        background: var(--text);
+        color: #fff;
+        border-color: var(--text);
+      }
+      .pkg.featured .pkg-cta {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .pkg.featured .pkg-cta:hover {
+        background: var(--accent-dark);
+        border-color: var(--accent-dark);
+      }
+
+      /* ============================
+       ABOUT
+    ============================ */
+      .about {
+        background: var(--bg);
+      }
+      .about-visual {
+          width: 100%;
+          height: 70vh;                        /* altura fija para el efecto */
+          background: url('images/portfolio/villa-19.jpg') center/cover no-repeat;
+          background-attachment: fixed;        /* ← esta línea es todo el efecto */
+        }
+
+      .about-text {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 2rem 0;
+        text-align: center;
+      }
+
+      .about-text h2 { margin: 1rem 0 1.75rem; }
+      .about-text p { font-size: 1.0625rem; margin-bottom: 1.25rem; }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--line);
+      }
+      /* ============================
+       CLIENTES
+    ============================ */
+      .clients {
+        background: var(--bg-alt);
+        padding: 5rem 0;
+      }
+      .clients .overline {
+        display: block;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        color: var(--text-soft);
+      }
+      .clients-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+        align-items: center;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 2.5rem 0;
+      }
+      @media (max-width: 900px) {
+        .clients-row {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+      .client-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--text);
+        padding: 0.5rem;
+        opacity: 0.7;
+        transition:
+          opacity 0.3s ease,
+          color 0.3s ease;
+      }
+      .client-name:hover {
+        opacity: 1;
+        color: var(--accent);
+      }
+
+      /* ============================
+       CONTACTO
+    ============================ */
+      .contact {
+        background: var(--text);
+        color: #fff;
+        padding: 7rem 0;
+      }
+      .contact .overline {
+        color: var(--accent);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+      .contact-info h2 {
+        color: #fff;
+        margin: 1rem 0 1.5rem;
+        font-size: clamp(2rem, 4.5vw, 3.25rem);
+      }
+      .contact-info p {
+        color: #cfcbc1;
+        font-size: 1.0625rem;
+        margin-bottom: 2.5rem;
+        max-width: 420px;
+      }
+      .contact-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #fff;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .contact-link:hover {
+        color: var(--accent);
+      }
+      .contact-link .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.3s ease;
+      }
+      .contact-link:hover .icon {
+        background: var(--accent);
+      }
+      .contact-link-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+        color: #cfcbc1;
+        display: block;
+      }
+      .contact-link-value {
+        font-size: 1.0625rem;
+        font-weight: 500;
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 2.5rem;
+        border-radius: 4px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      @media (max-width: 600px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+      }
+      .form-field label {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #cfcbc1;
+        font-weight: 500;
+      }
+      .form-field input,
+      .form-field textarea,
+      .form-field select {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.75rem 0;
+        color: #fff;
+        font-family: inherit;
+        font-size: 0.95rem;
+        transition: border-color 0.2s ease;
+      }
+      .form-field input:focus,
+      .form-field textarea:focus,
+      .form-field select:focus {
+        outline: none;
+        border-bottom-color: var(--accent);
+      }
+      .form-field select option {
+        background: #1a1a1a;
+        color: #fff;
+      }
+      .form-field textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .form-submit {
+        margin-top: 1.25rem;
+        width: 100%;
+        padding: 1.15rem;
+        background: var(--accent);
+        color: #fff;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition:
+          background 0.3s ease,
+          transform 0.2s ease;
+      }
+      .form-submit:hover {
+        background: var(--accent-dark);
+        transform: translateY(-1px);
+      }
+      .form-msg {
+        margin-top: 1rem;
+        padding: 0.9rem;
+        background: rgba(163, 136, 98, 0.15);
+        border: 1px solid var(--accent);
+        color: #fff;
+        font-size: 0.9rem;
+        display: none;
+        border-radius: 2px;
+      }
+      .form-msg.show {
+        display: block;
+      }
+
+      /* ============================
+       FOOTER
+    ============================ */
+      footer {
+        background: #0d0d0d;
+        color: #8a8a8a;
+        padding: 3rem 0 2rem;
+        font-size: 0.85rem;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      footer img {
+        height: 18px;
+        opacity: 0.7;
+      }
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      /* ============================
+       WHATSAPP FLOAT
+    ============================ */
+      .wa-float {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 99;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 10px 30px rgba(37, 211, 102, 0.4),
+          0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .wa-float:hover {
+        transform: scale(1.08);
+      }
+      .wa-float svg {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+      }
+
+      /* ============================
+       LIGHTBOX
+    ============================ */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.95);
+        z-index: 200;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .lightbox.active {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 88vh;
+        object-fit: contain;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-nav:hover,
+      .lightbox-close:hover {
+        background: var(--accent);
+      }
+      .lightbox-prev {
+        left: 1.5rem;
+      }
+      .lightbox-next {
+        right: 1.5rem;
+      }
+      .lightbox-counter {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      /* ============================
+       ANIMATIONS
+    ============================ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.9s cubic-bezier(0.2, 0.6, 0.2, 1),
+          transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body data-lang="es">
+    <!-- ============= NAV ============= -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#top" class="nav-logo">
+          <img src="images/logo/logo-black.png" alt="Swell Films" />
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="#portfolio"
+              ><span class="es">Portfolio</span
+              ><span class="en">Portfolio</span></a
+            >
+          </li>
+          <li>
+            <a href="#cinematics"
+              ><span class="es">Vídeos</span><span class="en">Films</span></a
+            >
+          </li>
+          <li>
+            <a href="#reels"
+              ><span class="es">Reels</span><span class="en">Reels</span></a
+            >
+          </li>
+          <li>
+            <a href="#services"
+              ><span class="es">Servicios</span
+              ><span class="en">Services</span></a
+            >
+          </li>
+          <li>
+            <a href="#about"
+              ><span class="es">Sobre mí</span><span class="en">About</span></a
+            >
+          </li>
+          <li>
+            <a href="#contact"
+              ><span class="es">Contacto</span
+              ><span class="en">Contact</span></a
+            >
+          </li>
+        </ul>
+        <div class="nav-right">
+          <div class="lang-switch">
+            <button data-lang="es" class="active">ES</button>
+            <span>/</span>
+            <button data-lang="en">EN</button>
+          </div>
+          <a href="#contact" class="nav-cta">
+            <span class="es">Presupuesto</span>
+            <span class="en">Get a quote</span>
+          </a>
+          <button class="nav-burger" id="navBurger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============= HERO ============= -->
+    <header class="hero" id="top">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <span class="overline"
+            ><span class="es">Fotografía y vídeo inmobiliario</span
+            ><span class="en">Real Estate Photography & Film</span></span
+          >
+          <h1>
+            <span class="es">El lujo se vende cuando <em>se ve</em>.</span>
+            <span class="en">Luxury sells when <em>it's seen</em>.</span>
+          </h1>
+          <p>
+            <span class="es"
+              >Fotografía y vídeo para las inmobiliarias más exclusivas de
+              Marbella y Estepona. Contenido que hace que las propiedades se
+              vendan antes.</span
+            >
+            <span class="en"
+              >Photography and film for the most exclusive real estate agencies
+              in Marbella and Estepona. Visual content that helps properties
+              sell faster.</span
+            >
+          </p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">
+              <span class="es">Ver portfolio</span
+              ><span class="en">View portfolio</span>
+            </a>
+            <a href="#services" class="btn btn-outline">
+              <span class="es">Servicios y precios</span
+              ><span class="en">Services & pricing</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <span class="hero-tag">Villa Casasola · Marbella</span>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span class="es">Desliza</span><span class="en">Scroll</span>
+      </div>
+    </header>
+
+    <!-- ============= PORTFOLIO ============= -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="overline"
+            ><span class="es">Portfolio</span
+            ><span class="en">Portfolio</span></span
+          >
+          <h2 class="display">
+            <span class="es">Selección de trabajos recientes</span>
+            <span class="en">A selection of recent work</span>
+          </h2>
+          <p>
+            <span class="es"
+              >Áticos, villas y apartamentos frente al mar. Cada propiedad se
+              aborda como un rodaje: luz, composición y detalle.</span
+            >
+            <span class="en"
+              >Penthouses, villas and seafront apartments. Every property is
+              approached like a film shoot: light, composition, detail.</span
+            >
+          </p>
+        </div>
+
+        <div class="grid-masonry" id="gallery">
+          <div class="tile big" data-src="images/portfolio/villa-17.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/villa-17.jpg"
+              alt="Villa Casasola"
+            />
+          </div>
+          <div class="tile tall" data-src="images/portfolio/apartment-05.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-05.jpg"
+              alt="Apartamento Terrazas"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-10.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-10.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/apartment-11.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-11.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile wide" data-src="images/portfolio/apartment-01.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-01.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/villa-18.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/villa-18.jpg"
+              alt="Villa"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-02.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-02.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-03.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-03.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile tall" data-src="images/portfolio/apartment-16.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-16.jpg"
+              alt="Ático Noche"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/apartment-04.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-04.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-07.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-07.jpg"
+              alt="Ático"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-08.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-08.jpg"
+              alt="Ático"
+            />
+          </div>
+          <div class="tile wide" data-src="images/portfolio/apartment-06.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-06.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/villa-19.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/villa-19.jpg"
+              alt="Villa"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-09.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-09.jpg"
+              alt="Ático"
+            />
+          </div>
+          <div class="tile sm" data-src="images/portfolio/apartment-12.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-12.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/apartment-13.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-13.jpg"
+              alt="Apartamento"
+            />
+          </div>
+          <div class="tile med" data-src="images/portfolio/apartment-14.jpg">
+            <img
+              loading="lazy"
+              src="images/portfolio/apartment-14.jpg"
+              alt="Apartamento"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= CINEMATICS ============= -->
+    <section class="cinematics" id="cinematics">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="overline"
+            ><span class="es">Vídeos cinematográficos</span
+            ><span class="en">Cinematic films</span></span
+          >
+          <h2 class="display">
+            <span class="es">Cada propiedad merece su propia película</span>
+            <span class="en">Every property deserves its own film</span>
+          </h2>
+          <p>
+            <span class="es"
+              >Reel cinematográfico grabado en gimbal y dron. Edición, color y
+              música diseñadas para transmitir el carácter de cada
+              inmueble.</span
+            >
+            <span class="en"
+              >Cinematic reels shot on gimbal and drone. Edit, color and music
+              crafted to convey each property's character.</span
+            >
+          </p>
+        </div>
+        <div class="video-grid">
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="vUQZ5qqlKI0"
+              aria-label="Reproducir cinemática 1"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/vUQZ5qqlKI0/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/vUQZ5qqlKI0/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="G6bWPQORoxI"
+              aria-label="Reproducir cinemática 2"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/G6bWPQORoxI/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/G6bWPQORoxI/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="gLfLpk8HTDQ"
+              aria-label="Reproducir cinemática 3"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/gLfLpk8HTDQ/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/gLfLpk8HTDQ/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="yhDy1I7rR80"
+              aria-label="Reproducir cinemática 4"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/yhDy1I7rR80/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/yhDy1I7rR80/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="FhAKDEEaGWM"
+              aria-label="Reproducir cinemática 5"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/FhAKDEEaGWM/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/FhAKDEEaGWM/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="video-card reveal">
+            <button
+              class="yt-lite"
+              data-id="SSpD-3cEEI4"
+              aria-label="Reproducir cinemática 6"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/SSpD-3cEEI4/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/SSpD-3cEEI4/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= REELS ============= -->
+    <section class="reels" id="reels">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="overline"
+            ><span class="es">Reels</span><span class="en">Reels</span></span
+          >
+          <h2 class="display">
+            <span class="es">Contenido vertical para redes</span>
+            <span class="en">Vertical content for social</span>
+          </h2>
+          <p>
+            <span class="es"
+              >Formato 9:16 optimizado para Instagram y TikTok. Pensado para
+              maximizar el alcance y captar a compradores cualificados.</span
+            >
+            <span class="en"
+              >9:16 format optimized for Instagram and TikTok. Designed to
+              maximize reach and attract qualified buyers.</span
+            >
+          </p>
+        </div>
+        <div class="reels-row">
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="Nz9r_vGsMFI"
+              aria-label="Reproducir reel 1"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/Nz9r_vGsMFI/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/Nz9r_vGsMFI/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="QjzsRFd9rNo"
+              aria-label="Reproducir reel 2"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/QjzsRFd9rNo/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/QjzsRFd9rNo/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="sobp7cted2E"
+              aria-label="Reproducir reel 3"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/sobp7cted2E/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/sobp7cted2E/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="gyszS5Am5c0"
+              aria-label="Reproducir reel 4"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/gyszS5Am5c0/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/gyszS5Am5c0/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="4E8AhQNPX9k"
+              aria-label="Reproducir reel 5"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/4E8AhQNPX9k/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/4E8AhQNPX9k/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="-9AkUehNVh0"
+              aria-label="Reproducir reel 6"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/-9AkUehNVh0/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/-9AkUehNVh0/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="4I_c0zOcv-k"
+              aria-label="Reproducir reel 7"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/4I_c0zOcv-k/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/4I_c0zOcv-k/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+          <div class="reel-card reveal">
+            <button
+              class="yt-lite"
+              data-id="3X-1Fu6GLMg"
+              aria-label="Reproducir reel 8"
+            >
+              <img
+                class="yt-lite-thumb"
+                src="../i.ytimg.com/vi/3X-1Fu6GLMg/maxresdefault.jpg"
+                alt=""
+                loading="lazy"
+                onerror="
+                  this.onerror = null;
+                  this.src = '../i.ytimg.com/vi/3X-1Fu6GLMg/hqdefault.jpg';
+                "
+              /><span class="yt-lite-play"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= SERVICIOS ============= -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="overline"
+            ><span class="es">Servicios y precios</span
+            ><span class="en">Services & pricing</span></span
+          >
+          <h2 class="display">
+            <span class="es">Paquetes a medida para cada propiedad</span>
+            <span class="en">Packages tailored to every property</span>
+          </h2>
+          <p>
+            <span class="es"
+              >Precios transparentes sin sorpresas. Todos los paquetes incluyen
+              retoque profesional, entrega en alta resolución y licencia de uso
+              comercial para la inmobiliaria.</span
+            >
+            <span class="en"
+              >Transparent pricing, no surprises. All packages include
+              professional retouching, high-resolution delivery and commercial
+              usage rights for the agency.</span
+            >
+          </p>
+        </div>
+
+        <!-- APARTAMENTOS -->
+        <div class="svc-block reveal">
+          <div class="svc-block-head">
+            <h3>
+              <span class="es">Apartamentos</span
+              ><span class="en">Apartments</span>
+            </h3>
+            <span class="overline"
+              ><span class="es">Desde 130 €</span
+              ><span class="en">From €130</span></span
+            >
+          </div>
+          <div class="pkg-grid">
+            <!-- Básico -->
+            <article class="pkg">
+              <div class="pkg-tier">
+                01 · <span class="es">Básico</span
+                ><span class="en">Essential</span>
+              </div>
+              <div class="pkg-name">
+                <span class="es">Básico</span><span class="en">Essential</span>
+              </div>
+              <div class="pkg-price">
+                130 €<small
+                  ><span class="es">1 h de rodaje</span
+                  ><span class="en">1 h session</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">25–35 fotos profesionales</span
+                    ><span class="en">25–35 professional photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Retoque y color profesional</span
+                    ><span class="en">Professional retouch & color</span></span
+                  >
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span
+                    ><span class="es">Reel / Cinematic</span
+                    ><span class="en">Reel / Cinematic</span></span
+                  >
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span>Dron</span>
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span
+                    ><span class="es">Atardecer / Noche</span
+                    ><span class="en">Sunset / Night</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+            <!-- Pro -->
+            <article class="pkg featured">
+              <div class="pkg-tier">
+                02 · Pro <span class="es">— Recomendado</span
+                ><span class="en">— Most popular</span>
+              </div>
+              <div class="pkg-name">Pro</div>
+              <div class="pkg-price">
+                250 €<small
+                  ><span class="es">1–2 h de rodaje</span
+                  ><span class="en">1–2 h session</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">25–35 fotos profesionales</span
+                    ><span class="en">25–35 professional photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Reel <em>o</em> Cinematic</span
+                    ><span class="en">Reel <em>or</em> Cinematic</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Dron (foto aérea)</span
+                    ><span class="en">Drone (aerial photo)</span></span
+                  >
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span
+                    ><span class="es">Atardecer / Noche</span
+                    ><span class="en">Sunset / Night</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+            <!-- High End -->
+            <article class="pkg">
+              <div class="pkg-tier">03 · High End</div>
+              <div class="pkg-name">High End</div>
+              <div class="pkg-price">
+                450 €<small
+                  ><span class="es">4 h o más</span
+                  ><span class="en">4 h+</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">25–35 fotos premium</span
+                    ><span class="en">25–35 premium photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span>Reel + Cinematic</span>
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Dron completo</span
+                    ><span class="en">Full drone coverage</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Sesión atardecer / noche</span
+                    ><span class="en">Sunset / night session</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+          </div>
+        </div>
+
+        <!-- VILLAS -->
+        <div class="svc-block reveal">
+          <div class="svc-block-head">
+            <h3>Villas</h3>
+            <span class="overline"
+              ><span class="es">Desde 190 €</span
+              ><span class="en">From €190</span></span
+            >
+          </div>
+          <div class="pkg-grid">
+            <article class="pkg">
+              <div class="pkg-tier">
+                01 · <span class="es">Básico</span
+                ><span class="en">Essential</span>
+              </div>
+              <div class="pkg-name">
+                <span class="es">Básico</span><span class="en">Essential</span>
+              </div>
+              <div class="pkg-price">
+                190 €<small
+                  ><span class="es">1 h de rodaje</span
+                  ><span class="en">1 h session</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">35–45 fotos profesionales</span
+                    ><span class="en">35–45 professional photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Dron (foto aérea)</span
+                    ><span class="en">Drone (aerial photo)</span></span
+                  >
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span>Reel / Cinematic</span>
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span>High End Video</span>
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span
+                    ><span class="es">Atardecer</span
+                    ><span class="en">Sunset</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+            <article class="pkg featured">
+              <div class="pkg-tier">
+                02 · Pro <span class="es">— Recomendado</span
+                ><span class="en">— Most popular</span>
+              </div>
+              <div class="pkg-name">Pro</div>
+              <div class="pkg-price">
+                350 €<small
+                  ><span class="es">1,5–2,5 h de rodaje</span
+                  ><span class="en">1.5–2.5 h session</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">35–45 fotos profesionales</span
+                    ><span class="en">35–45 professional photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span>Reel <em>o</em> Cinematic</span>
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span>High End Video</span>
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Dron (foto + vídeo)</span
+                    ><span class="en">Drone (photo + video)</span></span
+                  >
+                </li>
+                <li class="pkg-feature disabled">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg
+                  ><span
+                    ><span class="es">Atardecer</span
+                    ><span class="en">Sunset</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+            <article class="pkg">
+              <div class="pkg-tier">03 · High End</div>
+              <div class="pkg-name">High End</div>
+              <div class="pkg-price">
+                600 €<small
+                  ><span class="es">4 h o más</span
+                  ><span class="en">4 h+</span></small
+                >
+              </div>
+              <ul class="pkg-features">
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">35–45 fotos premium</span
+                    ><span class="en">35–45 premium photos</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span>Reel + High End Video</span>
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Dron completo (foto + vídeo)</span
+                    ><span class="en">Full drone (photo + video)</span></span
+                  >
+                </li>
+                <li class="pkg-feature">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  ><span
+                    ><span class="es">Sesión atardecer</span
+                    ><span class="en">Sunset session</span></span
+                  >
+                </li>
+              </ul>
+              <a href="#contact" class="pkg-cta"
+                ><span class="es">Reservar</span><span class="en">Book</span></a
+              >
+            </article>
+          </div>
+        </div>
+
+        <p
+          style="
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--text-soft);
+          "
+        >
+          <span class="es"
+            >¿Proyecto especial o varias propiedades?
+            <a
+              href="#contact"
+              style="
+                color: var(--accent);
+                border-bottom: 1px solid var(--accent);
+              "
+              >Pide un presupuesto a medida</a
+            >.</span
+          >
+          <span class="en"
+            >Special project or multiple properties?
+            <a
+              href="#contact"
+              style="
+                color: var(--accent);
+                border-bottom: 1px solid var(--accent);
+              "
+              >Request a custom quote</a
+            >.</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- ============= ABOUT ============= -->
+    <section class="about" id="about" style="padding: 0;">
+
+  <!-- Imagen full width FUERA del contenedor -->
+  <div class="about-visual reveal"></div>
+
+  <!-- Texto centrado dentro del contenedor -->
+  <div class="container">
+    <div class="about-text reveal">
+      <span class="overline"><span class="es">Sobre mí</span><span class="en">About</span></span>
+      <h2 class="display">
+        <span class="es">Paco Rodríguez,<br>fundador de <em>Swell&nbsp;Films</em>.</span>
+        <span class="en">Paco Rodríguez,<br>founder of <em>Swell&nbsp;Films</em>.</span>
+      </h2>
+      <p>
+        <span class="es">Con formación cinematográfica y más de seis años...</span>
+        <span class="en">With a background in cinematography...</span>
+      </p>
+      <div class="stats">
+        <div><span class="stat-num">6+</span><span class="stat-label"><span class="es">Años</span><span class="en">Years</span></span></div>
+        <div><span class="stat-num">200+</span><span class="stat-label"><span class="es">Propiedades</span><span class="en">Properties</span></span></div>
+        <div><span class="stat-num">10+</span><span class="stat-label"><span class="es">Inmobiliarias</span><span class="en">Agencies</span></span></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+    <!-- ============= CLIENTES ============= -->
+    <section class="clients">
+      <div class="container">
+        <span class="overline">
+          <span class="es">Inmobiliarias que confían en Swell Films</span>
+          <span class="en">Agencies that trust Swell Films</span>
+        </span>
+        <div class="clients-row">
+          <span class="client-name">Livingstone Estates</span>
+          <span class="client-name">Gilmar</span>
+          <span class="client-name">Way to Live</span>
+          <span class="client-name">Asemar</span>
+          <span class="client-name">Costa del Sol Homes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= CONTACTO ============= -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="overline"
+              ><span class="es">Contacto</span
+              ><span class="en">Get in touch</span></span
+            >
+            <h2 class="display">
+              <span class="es">Cuéntame<br />tu propiedad.</span>
+              <span class="en">Tell me about<br />your property.</span>
+            </h2>
+            <p>
+              <span class="es"
+                >Respondo en menos de 24 h. Si es urgente, escríbeme por
+                WhatsApp o llámame directamente.</span
+              >
+              <span class="en"
+                >I reply within 24 hours. If it's urgent, message me on WhatsApp
+                or call me directly.</span
+              >
+            </p>
+            <ul class="contact-links">
+              <li>
+                <a
+                  class="contact-link"
+                  href="https://wa.me/34608959757"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="#fff"
+                    >
+                      <path
+                        d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.9 7.9 0 0 0 5.6-13.6Zm-5.6 12.2a6.5 6.5 0 0 1-3.3-.9l-.2-.1-2.5.7.7-2.4-.2-.2a6.5 6.5 0 1 1 5.5 3Zm3.6-4.9c-.2-.1-1.2-.6-1.3-.6-.2-.1-.3-.1-.5.1s-.5.6-.6.8c-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.6-1s-1.1-1.3-1.2-1.5c-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4 0-.5.2s-.6.6-.6 1.5.7 1.7.8 1.8c.1.1 1.3 2 3.2 2.8.5.2.8.3 1.1.4.5.2.9.1 1.2.1.4 0 1.2-.5 1.3-.9.2-.5.2-.8.1-.9 0-.1-.2-.1-.4-.2Z"
+                      /></svg
+                  ></span>
+                  <span
+                    ><span class="contact-link-label">WhatsApp</span
+                    ><span class="contact-link-value"
+                      >+34 608 95 97 57</span
+                    ></span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  class="contact-link"
+                  href="mailto:pacorodriguezparada@gmail.com"
+                >
+                  <span class="icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <polyline points="3 7 12 13 21 7" /></svg
+                  ></span>
+                  <span
+                    ><span class="contact-link-label">Email</span
+                    ><span class="contact-link-value"
+                      >pacorodriguezparada@gmail.com</span
+                    ></span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  class="contact-link"
+                  href="https://instagram.com/swell_films"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="0.5" fill="#fff" /></svg
+                  ></span>
+                  <span
+                    ><span class="contact-link-label">Instagram</span
+                    ><span class="contact-link-value">@swell_films</span></span
+                  >
+                </a>
+              </li>
+              <li>
+                <a class="contact-link" href="#">
+                  <span class="icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"
+                      />
+                      <circle cx="12" cy="10" r="3" /></svg
+                  ></span>
+                  <span
+                    ><span class="contact-link-label"
+                      ><span class="es">Zona</span
+                      ><span class="en">Area</span></span
+                    ><span class="contact-link-value"
+                      >Marbella · Estepona · Costa del Sol</span
+                    ></span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form
+            action="https://swellfilms.netlify.app/?form=ok"
+            class="contact-form reveal"
+            id="contactForm"
+            method="POST"
+            name="contact"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p
+              class="hp-field"
+              style="
+                position: absolute;
+                left: -9999px;
+                top: auto;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+              "
+            >
+              <label
+                >No rellenar:
+                <input name="bot-field" tabindex="-1" autocomplete="off"
+              /></label>
+            </p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-name"
+                  ><span class="es">Nombre</span
+                  ><span class="en">Name</span></label
+                >
+                <input id="f-name" name="name" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="f-phone"
+                  ><span class="es">Teléfono</span
+                  ><span class="en">Phone</span></label
+                >
+                <input id="f-phone" name="phone" type="tel" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" required />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-type"
+                  ><span class="es">Tipo de propiedad</span
+                  ><span class="en">Property type</span></label
+                >
+                <select id="f-type" name="property_type">
+                  <option value="">—</option>
+                  <option value="apartment">Apartamento / Apartment</option>
+                  <option value="penthouse">Ático / Penthouse</option>
+                  <option value="villa">Villa</option>
+                  <option value="other">Otro / Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="f-package"
+                  ><span class="es">Paquete de interés</span
+                  ><span class="en">Package</span></label
+                >
+                <select id="f-package" name="package">
+                  <option value="basic">Básico / Essential</option>
+                  <option value="pro" selected>Pro</option>
+                  <option value="highend">High End</option>
+                  <option value="custom">Personalizado / Custom</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="f-message"
+                ><span class="es">Mensaje</span
+                ><span class="en">Message</span></label
+              >
+              <textarea
+                id="f-message"
+                name="message"
+                placeholder="Dirección, metros, fecha deseada…"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <span class="es">Solicitar presupuesto</span>
+              <span class="en">Request a quote</span>
+            </button>
+            <div class="form-msg" id="formMsg">
+              <span class="es"
+                >¡Gracias! He recibido tu mensaje y te respondo en menos de 24
+                horas.</span
+              >
+              <span class="en"
+                >Thanks! I've received your message and will reply within 24
+                hours.</span
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= FOOTER ============= -->
+    <footer>
+      <div class="container footer-inner">
+        <img src="images/logo/logo-white.png" alt="Swell Films" />
+        <p>
+          © <span id="year"></span> Swell Films · Paco Rodríguez · Marbella ·
+          <span class="es">Todos los derechos reservados.</span
+          ><span class="en">All rights reserved.</span>
+        </p>
+        <ul class="footer-links">
+          <li>
+            <a
+              href="https://instagram.com/swell_films"
+              target="_blank"
+              rel="noopener"
+              >Instagram</a
+            >
+          </li>
+          <li><a href="mailto:pacorodriguezparada@gmail.com">Email</a></li>
+          <li>
+            <a href="https://wa.me/34608959757" target="_blank" rel="noopener"
+              >WhatsApp</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- WhatsApp float button -->
+    <a
+      class="wa-float"
+      href="https://wa.me/34608959757"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.9 7.9 0 0 0 5.6-13.6Zm-5.6 12.2a6.5 6.5 0 0 1-3.3-.9l-.2-.1-2.5.7.7-2.4-.2-.2a6.5 6.5 0 1 1 5.5 3Zm3.6-4.9c-.2-.1-1.2-.6-1.3-.6-.2-.1-.3-.1-.5.1s-.5.6-.6.8c-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.6-1s-1.1-1.3-1.2-1.5c-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4 0-.5.2s-.6.6-.6 1.5.7 1.7.8 1.8c.1.1 1.3 2 3.2 2.8.5.2.8.3 1.1.4.5.2.9.1 1.2.1.4 0 1.2-.5 1.3-.9.2-.5.2-.8.1-.9 0-.1-.2-.1-.4-.2Z"
+        />
+      </svg>
+    </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lbClose">×</button>
+      <button class="lightbox-nav lightbox-prev" id="lbPrev">‹</button>
+      <img id="lbImg" src="#" alt="" />
+      <button class="lightbox-nav lightbox-next" id="lbNext">›</button>
+      <span class="lightbox-counter" id="lbCounter"></span>
+    </div>
+
+    <script>
+      // ============ YEAR ============
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ============ LANGUAGE SWITCH ============
+      const langBtns = document.querySelectorAll(".lang-switch button");
+      const setLang = (lang) => {
+        document.body.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang;
+        langBtns.forEach((b) =>
+          b.classList.toggle("active", b.dataset.lang === lang),
+        );
+        try {
+          localStorage.setItem("swell_lang", lang);
+        } catch (e) {}
+      };
+      langBtns.forEach((b) =>
+        b.addEventListener("click", () => setLang(b.dataset.lang)),
+      );
+      try {
+        const saved = localStorage.getItem("swell_lang");
+        if (saved) setLang(saved);
+        else if (navigator.language && !navigator.language.startsWith("es"))
+          setLang("en");
+      } catch (e) {}
+
+      // ============ NAV SCROLL ============
+      const nav = document.getElementById("nav");
+      const onScroll = () =>
+        nav.classList.toggle("scrolled", window.scrollY > 10);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // ============ MOBILE MENU ============
+      const burger = document.getElementById("navBurger");
+      burger.addEventListener("click", () =>
+        document.body.classList.toggle("menu-open"),
+      );
+      document
+        .querySelectorAll(".nav-links a")
+        .forEach((a) =>
+          a.addEventListener("click", () =>
+            document.body.classList.remove("menu-open"),
+          ),
+        );
+
+      // ============ REVEAL ON SCROLL ============
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      // ============ LIGHTBOX ============
+      const gallery = document.getElementById("gallery");
+      const tiles = Array.from(gallery.querySelectorAll(".tile"));
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lbImg");
+      const lbCounter = document.getElementById("lbCounter");
+      let lbIndex = 0;
+      const openLb = (i) => {
+        lbIndex = i;
+        lbImg.src = tiles[i].dataset.src;
+        lbCounter.textContent = `${i + 1} / ${tiles.length}`;
+        lb.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const closeLb = () => {
+        lb.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+      const nextLb = () => openLb((lbIndex + 1) % tiles.length);
+      const prevLb = () => openLb((lbIndex - 1 + tiles.length) % tiles.length);
+      tiles.forEach((t, i) => t.addEventListener("click", () => openLb(i)));
+      document.getElementById("lbClose").addEventListener("click", closeLb);
+      document.getElementById("lbNext").addEventListener("click", nextLb);
+      document.getElementById("lbPrev").addEventListener("click", prevLb);
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLb();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!lb.classList.contains("active")) return;
+        if (e.key === "Escape") closeLb();
+        if (e.key === "ArrowRight") nextLb();
+        if (e.key === "ArrowLeft") prevLb();
+      });
+
+      // ============ LITE YOUTUBE EMBED ============
+      // Sustituye la portada por el iframe real al hacer clic.
+      document.querySelectorAll(".yt-lite").forEach((btn) => {
+        btn.addEventListener(
+          "click",
+          () => {
+            const id = btn.dataset.id;
+            if (!id) return;
+            const iframe = document.createElement("iframe");
+            iframe.setAttribute(
+              "src",
+              `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`,
+            );
+            iframe.setAttribute(
+              "title",
+              btn.getAttribute("aria-label") || "Video",
+            );
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute(
+              "allow",
+              "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture",
+            );
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.style.cssText =
+              "position:absolute;inset:0;width:100%;height:100%;border:0;";
+            btn.replaceWith(iframe);
+          },
+          { once: true },
+        );
+
+        // Pre-conexión a YouTube en hover/focus para que el clic responda más rápido
+        const warm = () => {
+          if (warm._done) return;
+          warm._done = true;
+          [
+            "https://www.youtube-nocookie.com",
+            "https://i.ytimg.com/",
+            "https://s.ytimg.com",
+          ].forEach((host) => {
+            const link = document.createElement("link");
+            link.rel = "preconnect";
+            link.href = host;
+            document.head.appendChild(link);
+          });
+        };
+        btn.addEventListener("pointerenter", warm, { once: true });
+        btn.addEventListener("focus", warm, { once: true });
+      });
+
+      // ============ FORM (Netlify Forms) ============
+      const form = document.getElementById("contactForm");
+      const msg = document.getElementById("formMsg");
+
+      // Show success message if URL contains ?form=ok (post-redirect)
+      if (window.location.search.includes("form=ok")) {
+        msg.classList.add("show");
+        // Clean URL so refresh doesn't keep showing it
+        const cleanUrl =
+          window.location.origin +
+          window.location.pathname +
+          window.location.hash;
+        window.history.replaceState({}, "", cleanUrl);
+        setTimeout(() => msg.classList.remove("show"), 8000);
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const isLocal =
+          window.location.protocol === "file:" ||
+          window.location.hostname === "localhost";
+        // Local preview fallback: open mailto so the form is testable from disk
+        if (isLocal) {
+          const body = encodeURIComponent(
+            `Nombre: ${data.get("name")}\nTeléfono: ${data.get("phone")}\nEmail: ${data.get("email")}\nPropiedad: ${data.get("property_type")}\nPaquete: ${data.get("package")}\n\n${data.get("message")}`,
+          );
+          window.location.href = `mailto:pacorodriguezparada@gmail.com?subject=Nueva%20consulta%20web%20Swell%20Films&body=${body}`;
+          return;
+        }
+        // Netlify Forms: POST URL-encoded body to root
+        const params = new URLSearchParams();
+        for (const [k, v] of data.entries()) params.append(k, v);
+        try {
+          const res = await fetch("index.html", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: params.toString(),
+          });
+          if (res.ok) {
+            form.reset();
+            msg.classList.add("show");
+            setTimeout(() => msg.classList.remove("show"), 8000);
+          } else {
+            msg.classList.add("show");
+            msg.style.color = "#ff6b6b";
+            msg.innerHTML =
+              '<span class="es">Hubo un problema enviando el formulario. Escríbeme directamente a pacorodriguezparada@gmail.com</span><span class="en">There was a problem sending the form. Please email me directly at pacorodriguezparada@gmail.com</span>';
+          }
+        } catch (err) {
+          console.error(err);
+          msg.classList.add("show");
+          msg.style.color = "#ff6b6b";
+          msg.innerHTML =
+            '<span class="es">Error de conexión. Escríbeme a pacorodriguezparada@gmail.com</span><span class="en">Connection error. Please email me at pacorodriguezparada@gmail.com</span>';
+        }
+      });
+    </script>
+  </body>
+
+  <!-- Mirrored from swellfilms.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 09:44:08 GMT -->
+</html>
