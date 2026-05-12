@@ -97,6 +97,8 @@
         --line: #e6e3dc;
         --accent: #a38862; /* dorado tierra sutil */
         --accent-dark: #8a7249;
+
+
         --max: 1400px;
       }
 
@@ -178,6 +180,7 @@
       .nav.scrolled {
         border-bottom-color: var(--line);
         padding: 0.75rem 2rem;
+         background: var(--bg);
       }
       .nav-inner {
         max-width: var(--max);
@@ -305,156 +308,165 @@
       /* ============================
        HERO
     ============================ */
-      .hero {
-        min-height: 100svh;
-        min-height: 100vh;
-        padding: 9rem 0 4rem;
-        display: flex;
-        align-items: center;
-        position: relative;
-        background: var(--bg);
-        overflow: hidden;
-      }
-      .hero-grid {
-        max-width: var(--max);
-        margin: 0 auto;
-        width: 100%;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1.1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-      @media (max-width: 900px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 2.5rem;
+     .hero {
+  min-height: 100svh;
+  min-height: 100vh;
+  padding: 9rem 0 1rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+}
+  .hero-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 3rem 2rem;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+        @media (max-width: 900px) {
+          .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+          }
+          .hero {
+            padding-top: 7rem;
+          }
         }
-        .hero {
-          padding-top: 7rem;
+
+    .hero-top {
+      margin-top:5rem;
+    }
+  .hero-top h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    padding: 0.3rem 0rem 3rem;
+  }
+  .hero-top h1 em {
+    font-style: italic;
+   
+    font-weight: 400;
+  }
+  .hero-top .overline {
+    color:white;
+    margin-bottom:0rem;
+  }
+  .hero-bottom-left p {
+    font-size: 1.125rem;
+    max-width: 500px;
+    color: rgba(255,255,255,0.85);
+    padding: 9rem 0 1.75rem;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  } 
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          padding: 1rem 2rem;
+          font-size: 0.875rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          font-weight: 500;
+          border-radius: 999px;
+          transition: all 0.3s ease;
         }
-      }
-      .hero-text h1 {
-        font-family: "Playfair Display", serif;
-        font-weight: 400;
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        line-height: 1.05;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        margin: 1.5rem 0 1.75rem;
-      }
-      .hero-text h1 em {
-        font-style: italic;
-        color: var(--accent);
-        font-weight: 400;
-      }
-      .hero-text p {
-        font-size: 1.125rem;
-        max-width: 500px;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2.5rem;
-        flex-wrap: wrap;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 1rem 2rem;
-        font-size: 0.875rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 500;
-        border-radius: 999px;
-        transition: all 0.3s ease;
-      }
-      .btn-primary {
-        background: var(--text);
-        color: #fff;
-      }
-      .btn-primary:hover {
-        background: var(--accent);
-        transform: translateY(-2px);
-      }
-      .btn-outline {
-        border: 1px solid var(--text);
-        color: var(--text);
-      }
-      .btn-outline:hover {
-        background: var(--text);
-        color: #fff;
-      }
-      .hero-visual {
-        position: relative;
-        aspect-ratio: 4/5;
-        background: url("images/portfolio/villa-17.jpg") center/cover no-repeat;
-        border-radius: 2px;
-        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.25);
-      }
-      .hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          transparent 60%,
-          rgba(0, 0, 0, 0.15)
-        );
-      }
-      .hero-tag {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1.5rem;
-        z-index: 2;
-        color: #fff;
-        font-size: 0.75rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-      .hero-tag::before {
-        content: "— ";
-      }
-      .scroll-hint {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.7rem;
-        letter-spacing: 0.3em;
-        color: var(--text-soft);
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .scroll-hint::after {
-        content: "";
-        width: 1px;
-        height: 30px;
-        background: var(--text-soft);
-        animation: scrollPulse 2s ease-in-out infinite;
-      }
-      @keyframes scrollPulse {
-        0%,
-        100% {
-          transform: scaleY(0.5);
-          transform-origin: top;
-          opacity: 0.3;
+        .btn-primary {
+          background: var(--text);
+          color: #fff;
         }
-        50% {
-          transform: scaleY(1);
-          opacity: 1;
+        .btn-primary:hover {
+          background: var(--accent);
+          transform: translateY(-2px);
         }
-      }
-      @media (max-width: 900px) {
+        .btn-outline {
+          border: 1px solid var(--text);
+          color: var(--text);
+        }
+        .btn-outline:hover {
+          background: var(--text);
+          color: #fff;
+        }
+        .hero-visual {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          background: url("images/portfolio/villa-17.jpg") center/cover no-repeat;
+          background-attachment: fixed;
+        }
+        .hero-visual::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+        }
+        .hero-tag {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 1.5rem;
+          z-index: 2;
+          color: #fff;
+          font-size: 0.75rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+        .hero-tag::before {
+          content: "— ";
+        }
         .scroll-hint {
-          display: none;
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 0.7rem;
+          letter-spacing: 0.3em;
+          color: var(--text-soft);
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
         }
-      }
+        .scroll-hint::after {
+          content: "";
+          width: 1px;
+          height: 30px;
+          background: var(--text-soft);
+          animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+          0%,
+          100% {
+            transform: scaleY(0.5);
+            transform-origin: top;
+            opacity: 0.3;
+          }
+          50% {
+            transform: scaleY(1);
+            opacity: 1;
+          }
+        }
+        @media (max-width: 900px) {
+          .scroll-hint {
+            display: none;
+          }
+        }
 
       /* ============================
        SECTION HEADER
@@ -1315,49 +1327,34 @@
     </nav>
 
     <!-- ============= HERO ============= -->
-    <header class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-text reveal">
-          <span class="overline"
-            ><span class="es">Fotografía y vídeo inmobiliario</span
-            ><span class="en">Real Estate Photography & Film</span></span
-          >
-          <h1>
-            <span class="es">El lujo se vende cuando <em>se ve</em>.</span>
-            <span class="en">Luxury sells when <em>it's seen</em>.</span>
-          </h1>
-          <p>
-            <span class="es"
-              >Fotografía y vídeo para las inmobiliarias más exclusivas de
-              Marbella y Estepona. Contenido que hace que las propiedades se
-              vendan antes.</span
-            >
-            <span class="en"
-              >Photography and film for the most exclusive real estate agencies
-              in Marbella and Estepona. Visual content that helps properties
-              sell faster.</span
-            >
-          </p>
-          <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-primary">
-              <span class="es">Ver portfolio</span
-              ><span class="en">View portfolio</span>
-            </a>
-            <a href="#services" class="btn btn-outline">
-              <span class="es">Servicios y precios</span
-              ><span class="en">Services & pricing</span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual reveal">
-          <span class="hero-tag">Villa Casasola · Marbella</span>
-        </div>
-      </div>
-      <div class="scroll-hint">
-        <span class="es">Desliza</span><span class="en">Scroll</span>
-      </div>
-    </header>
+   <header class="hero" id="top">
+  <div class="hero-visual"></div>
+  <div class="hero-grid">
 
+    <!-- Fila superior: overline izquierda, h1 derecha -->
+    <div class="hero-top">
+      <span class="overline">
+        <span class="es">Fotografía y vídeo inmobiliario</span>
+        <span class="en">Real Estate Photography & Film</span>
+      </span>
+      <h1>
+        <span class="es">El lujo se vende cuando <em>se ve</em>.</span>
+        <span class="en">Luxury sells when <em>it's seen</em>.</span>
+      </h1>
+    </div>
+
+    <!-- Fila inferior: p + botones izquierda, tag derecha -->
+    <div class="hero-bottom">
+      <div class="hero-bottom-right">
+        <span class="hero-tag">Villa Casasola · Marbella</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-hint">
+    <span class="es">Desliza</span><span class="en">Scroll</span>
+  </div>
+</header>
     <!-- ============= PORTFOLIO ============= -->
     <section class="portfolio" id="portfolio">
       <div class="container">
