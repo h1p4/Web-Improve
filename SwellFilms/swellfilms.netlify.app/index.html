@@ -168,7 +168,7 @@
         left: 0;
         right: 0;
         z-index: 100;
-        padding: 1.25rem 2rem;
+        padding: 0.6rem 2rem;
         background: rgba(250, 250, 247, 0.82);
         backdrop-filter: saturate(180%) blur(14px);
         -webkit-backdrop-filter: saturate(180%) blur(14px);
@@ -183,31 +183,89 @@
          background: var(--bg);
       }
       .nav-inner {
-        max-width: var(--max);
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-      }
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-right {
+  justify-self: end;
+}
       .nav-logo img {
-        height: 22px;
+        height: 21px;
         width: auto;
       }
       .nav-links {
-        display: flex;
-        gap: 2.25rem;
-        list-style: none;
-      }
-      .nav-links a {
-        font-size: 0.875rem;
-        font-weight: 400;
-        color: var(--text);
-        letter-spacing: 0.02em;
-      }
-      .nav-links a:hover {
-        color: var(--accent);
-      }
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  margin:0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+.nav-links li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  align-items:center;
+  height: 53.6px; 
+  transition: border-color 0.28s ease, background 0.28s ease;
+}
+
+.nav-links a:hover {
+  background: black;
+  border-color: black;
+}
+
+/* Texto por defecto */
+.nav-links a .text-default {
+  display: flex;
+  align-items: center;
+}
+.nav-links a .text-default span {
+  display: inline-block;
+  color: var(--text);
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.nav-links a:hover .text-default span {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Texto hover */
+.nav-links a .text-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links a .text-hover span {
+  display: inline-block;
+  color: #fff;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.nav-links a:hover .text-hover span {
+  transform: translateY(0);
+  opacity: 1;
+}
       .nav-right {
         display: flex;
         align-items: center;
@@ -218,7 +276,7 @@
         align-items: center;
         gap: 0.4rem;
         font-size: 0.8rem;
-        font-weight: 500;
+        font-weight: 300;
       }
       .lang-switch button {
         color: var(--text-soft);
@@ -233,20 +291,55 @@
       .lang-switch span {
         color: var(--line);
       }
-      .nav-cta {
-        background: var(--text);
-        color: #fff;
-        padding: 0.65rem 1.4rem;
-        border-radius: 999px;
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-      .nav-cta:hover {
-        background: var(--accent);
-        color: #fff;
-      }
+.nav-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--text);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.28s ease;
+}
+.nav-cta:hover {
+  background: var(--accent);
+}
+.nav-cta .text-default {
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.nav-cta .text-default span {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.nav-cta:hover .text-default span {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.nav-cta .text-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-cta .text-hover span {
+  display: inline-block;
+  color: #fff;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.nav-cta:hover .text-hover span {
+  transform: translateY(0);
+  opacity: 1;
+}
       .nav-burger {
         display: none;
         width: 28px;
@@ -2812,6 +2905,7 @@
         );
         try {
           localStorage.setItem("swell_lang", lang);
+          initNavAnimation(lang);
         } catch (e) {}
       };
       langBtns.forEach((b) =>
@@ -2998,6 +3092,47 @@
             '<span class="es">Error de conexión. Escríbeme a pacorodriguezparada@gmail.com</span><span class="en">Connection error. Please email me at pacorodriguezparada@gmail.com</span>';
         }
       });
+
+// ============ NAV LINKS LETTER ANIMATION ============
+// Guardar textos originales antes de modificar el HTML
+document.querySelectorAll('.nav-links a').forEach(link => {
+  const esSpan = link.querySelector('span.es');
+  const enSpan = link.querySelector('span.en');
+  if (esSpan) link.dataset.textEs = esSpan.textContent.trim();
+  if (enSpan) link.dataset.textEn = enSpan.textContent.trim();
+});
+
+const initNavAnimation = (lang) => {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const text = link.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
+                 || link.dataset.textEs
+                 || link.textContent.trim();
+    link.innerHTML = `
+      <span class="text-default">${text.split('').map((c, i) =>
+        `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
+      ).join('')}</span>
+      <span class="text-hover">${text.split('').map((c, i) =>
+        `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
+      ).join('')}</span>
+    `;
+  });
+};
+initNavAnimation(document.body.getAttribute('data-lang') || 'es');
+
+
+// Animación botón CTA
+document.querySelectorAll('.nav-cta').forEach(btn => {
+  const activeSpan = btn.querySelector(`span.${lang}`);
+  const text = activeSpan ? activeSpan.textContent.trim() : btn.textContent.trim();
+  btn.innerHTML = `
+    <span class="text-default">${text.split('').map((c, i) =>
+      `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
+    ).join('')}</span>
+    <span class="text-hover">${text.split('').map((c, i) =>
+      `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
+    ).join('')}</span>
+  `;
+});
     </script>
   </body>
 
