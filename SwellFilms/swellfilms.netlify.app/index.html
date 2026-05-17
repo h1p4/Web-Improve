@@ -51,6 +51,7 @@
         margin: 0;
         padding: 0;
       }
+
       html {
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
@@ -159,6 +160,10 @@
         display: none !important;
       }
 
+
+
+      /*    */
+
       /* ============================
        NAV
     ============================ */
@@ -221,7 +226,7 @@
   letter-spacing: 0.02em;
   overflow: hidden;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 999px;
   align-items:center;
   height: 53.6px; 
   transition: border-color 0.28s ease, background 0.28s ease;
@@ -230,6 +235,7 @@
 .nav-links a:hover {
   background: black;
   border-color: black;
+  border-radius: 999px;
 }
 
 /* Texto por defecto */
@@ -307,7 +313,8 @@
   transition: background 0.28s ease;
 }
 .nav-cta:hover {
-  background: var(--accent);
+background: var(--accent);
+
 }
 .nav-cta .text-default {
   display: flex;
@@ -367,37 +374,113 @@
         transform: translateY(-6.5px) rotate(-45deg);
       }
 
-      @media (max-width: 900px) {
-        .nav-burger {
-          display: flex;
-        }
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          width: 80%;
-          max-width: 340px;
-          background: var(--bg);
-          flex-direction: column;
-          gap: 1.5rem;
-          padding: 6rem 2rem;
-          justify-content: flex-start;
-          transform: translateX(100%);
-          transition: transform 0.35s ease;
-          box-shadow: -20px 0 60px rgba(0, 0, 0, 0.08);
-        }
-        body.menu-open .nav-links {
-          transform: translateX(0);
-        }
-        .nav-links a {
-          font-size: 1.25rem;
-        }
-        .nav-cta {
-          display: none;
-        }
-      }
+     @media (max-width: 900px) {
+  .nav-burger {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    z-index: 102;
+  }
+  .nav-inner {
+    grid-template-columns: auto 1fr auto;
+  }
 
+  /* Overlay oscuro detrás del menú */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+  }
+  body.menu-open .nav-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Panel lateral izquierdo — estilo aside de la página objetivo */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    width: min(72vw, 320px);
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0;
+    padding: 5rem 2.5rem 3.5rem;
+    height: 100vh;
+    height: 100svh;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 101;
+    border-right: 1px solid rgba(163,136,98,0.2);
+  }
+  body.menu-open .nav-links {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+  .nav-links li:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links a {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85) !important;
+    letter-spacing: 0.01em;
+    height: auto !important;
+    padding: 0.9rem 0 !important;
+    width: 100%;
+    border: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+    transform: translateX(-2rem);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1),
+                opacity 0.45s ease,
+                color 0.2s ease;
+  }
+  .nav-links a:hover {
+    color: var(--accent) !important;
+    background: none !important;
+  }
+  body.menu-open .nav-links a {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  /* Delays escalonados */
+  body.menu-open .nav-links li:nth-child(1) a { transition-delay: 0.08s; }
+  body.menu-open .nav-links li:nth-child(2) a { transition-delay: 0.13s; }
+  body.menu-open .nav-links li:nth-child(3) a { transition-delay: 0.18s; }
+  body.menu-open .nav-links li:nth-child(4) a { transition-delay: 0.23s; }
+  body.menu-open .nav-links li:nth-child(5) a { transition-delay: 0.28s; }
+  body.menu-open .nav-links li:nth-child(6) a { transition-delay: 0.33s; }
+
+  /* Ocultar los spans de animación hover en móvil */
+  .nav-links a .text-hover { display: none !important; }
+  .nav-links a .text-default span {
+    transform: none !important;
+    opacity: 1 !important;
+    color: inherit !important;
+  }
+
+  .nav-cta { display: none; }
+
+  /* Icono burger: se convierte en X al abrir */
+  body.menu-open .nav-burger span { background: var(--text); }
+}
       /* ============================
        HERO
     ============================ */
@@ -586,6 +669,7 @@
     ============================ */
       .portfolio {
         background: var(--bg-alt);
+        
       }
       .grid-masonry {
         display: grid;
@@ -607,7 +691,7 @@
         overflow: hidden;
         cursor: pointer;
         background: #f0eee9;
-        border-radius: 2px;
+        border-radius: 10px;
         display: block;
       }
       .tile img {
@@ -656,7 +740,7 @@
         position: relative;
         overflow: hidden;
         background: #000;
-        border-radius: 2px;
+        border-radius: 10px;
         aspect-ratio: 16/9;
         box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.2);
       }
@@ -692,7 +776,7 @@
         aspect-ratio: 9/16;
         overflow: hidden;
         background: #000;
-        border-radius: 2px;
+        border-radius: 10px;
         box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
       }
       .reel-card iframe {
@@ -744,6 +828,7 @@
           transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
           filter 0.4s ease;
       }
+      
       .yt-lite:hover .yt-lite-thumb {
         transform: scale(1.04);
         filter: brightness(0.92);
@@ -818,9 +903,10 @@
     ============================ */
       .services {
         background: var(--bg-alt);
+        border-radius: 100px;
       }
       .svc-block {
-        margin-bottom: 4rem;
+        margin-bottom: 4rem;        
       }
       .svc-block:last-child {
         margin-bottom: 0;
@@ -845,7 +931,7 @@
       .pkg-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 1.5rem;        
       }
       @media (max-width: 900px) {
         .pkg-grid {
@@ -971,34 +1057,23 @@
       /* ============================
        ABOUT
     ============================ */
-      .about {
-        background: var(--bg);
-      }
-      .about-visual {
-          width: 100%;
-          height: 70vh;                        /* altura fija para el efecto */
-          background: url('images/portfolio/villa-19.jpg') center/cover no-repeat;
-          background-attachment: fixed;        /* ← esta línea es todo el efecto */
-        }
+ .about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-visual {
+      position: relative; aspect-ratio: 4/5;
+      background: url('images/portfolio/villa-19.jpg') center/cover no-repeat;
+      border-radius: 2px;
+    }
+    .about-visual::before {
+      content: ''; position: absolute; inset: -20px -20px 20px 20px; border: 1px solid var(--accent); z-index: -1; border-radius: 2px;
+    }
+    .about-text h2 { margin: 1rem 0 1.75rem; }
+    .about-text p { font-size: 1.0625rem; margin-bottom: 1.25rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 500; display: block; line-height: 1; }
+    .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.5rem; display: block; }
 
-      .about-text {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 4rem 2rem 0;
-        text-align: center;
-      }
-
-      .about-text h2 { margin: 1rem 0 1.75rem; }
-      .about-text p { font-size: 1.0625rem; margin-bottom: 1.25rem; }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-top: 2.5rem;
-        padding-top: 2.5rem;
-        border-top: 1px solid var(--line);
-      }
       /* ============================
        CLIENTES
     ============================ */
@@ -1361,7 +1436,16 @@
     </style>
   </head>
   <body data-lang="es">
+
+    <div class="door-overlay">
+  <div class="door-left"></div>
+  <div class="door-right"></div>
+</div>
+
     <!-- ============= NAV ============= -->
+    <!-- Overlay para cerrar el menú móvil al tocar fuera -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <nav class="nav" id="nav">
       <div class="nav-inner">
         <a href="#top" class="nav-logo">
@@ -2557,32 +2641,33 @@
     </section>
 
     <!-- ============= ABOUT ============= -->
-    <section class="about" id="about" style="padding: 0;">
-
-  <!-- Imagen full width FUERA del contenedor -->
-  <div class="about-visual reveal"></div>
-
-  <!-- Texto centrado dentro del contenedor -->
-  <div class="container">
-    <div class="about-text reveal">
-      <span class="overline"><span class="es">Sobre mí</span><span class="en">About</span></span>
-      <h2 class="display">
-        <span class="es">Paco Rodríguez,<br>fundador de <em>Swell&nbsp;Films</em>.</span>
-        <span class="en">Paco Rodríguez,<br>founder of <em>Swell&nbsp;Films</em>.</span>
-      </h2>
-      <p>
-        <span class="es">Con formación cinematográfica y más de seis años...</span>
-        <span class="en">With a background in cinematography...</span>
-      </p>
-      <div class="stats">
-        <div><span class="stat-num">6+</span><span class="stat-label"><span class="es">Años</span><span class="en">Years</span></span></div>
-        <div><span class="stat-num">200+</span><span class="stat-label"><span class="es">Propiedades</span><span class="en">Properties</span></span></div>
-        <div><span class="stat-num">10+</span><span class="stat-label"><span class="es">Inmobiliarias</span><span class="en">Agencies</span></span></div>
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal"></div>
+        <div class="about-text reveal">
+          <span class="overline"><span class="es">Sobre mí</span><span class="en">About</span></span>
+          <h2 class="display">
+            <span class="es">Paco Rodríguez,<br>fundador de <em>Swell&nbsp;Films</em>.</span>
+            <span class="en">Paco Rodríguez,<br>founder of <em>Swell&nbsp;Films</em>.</span>
+          </h2>
+          <p>
+            <span class="es">Con formación cinematográfica y más de seis años dedicado a la fotografía y el vídeo inmobiliario, me especializo en villas y apartamentos de lujo frente al mar. Trabajo para las inmobiliarias más exigentes de Marbella y Estepona, donde cada propiedad merece contarse como una historia.</span>
+            <span class="en">With a background in cinematography and over six years focused on real estate photography and film, I specialize in luxury villas and apartments on the seafront. I work with the most demanding agencies in Marbella and Estepona, where every property deserves to be told like a story.</span>
+          </p>
+          <p>
+            <span class="es">Mi enfoque pone el foco en los pequeños detalles que marcan la diferencia: la luz que atraviesa una terraza a última hora, la textura de la piedra, la composición que hace que el visitante imagine la vida dentro del inmueble. Ese es el contenido que ayuda a vender antes.</span>
+            <span class="en">My approach is obsessed with the small details that make all the difference: the late afternoon light crossing a terrace, the texture of stone, the composition that helps the visitor imagine life inside the home. That's the content that helps sell faster.</span>
+          </p>
+          <div class="stats">
+            <div><span class="stat-num">6+</span><span class="stat-label"><span class="es">Años</span><span class="en">Years</span></span></div>
+            <div><span class="stat-num">200+</span><span class="stat-label"><span class="es">Propiedades</span><span class="en">Properties</span></span></div>
+            <div><span class="stat-num">10+</span><span class="stat-label"><span class="es">Inmobiliarias</span><span class="en">Agencies</span></span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-</section>
+  </section>
 
     <!-- ============= CLIENTES ============= -->
     <section class="clients">
@@ -2892,6 +2977,8 @@
     </div>
 
     <script>
+
+
       // ============ YEAR ============
       document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -2927,16 +3014,39 @@
 
       // ============ MOBILE MENU ============
       const burger = document.getElementById("navBurger");
-      burger.addEventListener("click", () =>
-        document.body.classList.toggle("menu-open"),
-      );
-      document
-        .querySelectorAll(".nav-links a")
-        .forEach((a) =>
-          a.addEventListener("click", () =>
-            document.body.classList.remove("menu-open"),
-          ),
-        );
+      const navOverlay = document.getElementById("navOverlay");
+
+      function closeMenu() {
+        document.body.classList.remove('menu-open');
+      }
+      function openMenu() {
+        document.body.classList.add('menu-open');
+      }
+
+      burger.addEventListener('click', () => {
+        document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+      });
+
+      // Cerrar al hacer clic en el overlay
+      if (navOverlay) {
+        navOverlay.addEventListener('click', closeMenu);
+      }
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            closeMenu();
+            setTimeout(() => {
+              const target = document.querySelector(href);
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }, 350);
+          } else {
+            closeMenu();
+          }
+        });
+      });
 
       // ============ REVEAL ON SCROLL ============
       const io = new IntersectionObserver(
@@ -3102,6 +3212,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   if (enSpan) link.dataset.textEn = enSpan.textContent.trim();
 });
 
+document.querySelectorAll('.nav-cta').forEach(btn => {
+  const esSpan = btn.querySelector('span.es');
+  const enSpan = btn.querySelector('span.en');
+  if (esSpan) btn.dataset.textEs = esSpan.textContent.trim();
+  if (enSpan) btn.dataset.textEn = enSpan.textContent.trim();
+  // Si no tiene spans de idioma, guardar el texto tal cual
+  if (!esSpan && !enSpan) btn.dataset.textEs = btn.textContent.trim();
+});
+
 const initNavAnimation = (lang) => {
   document.querySelectorAll('.nav-links a').forEach(link => {
     const text = link.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
@@ -3116,14 +3235,12 @@ const initNavAnimation = (lang) => {
       ).join('')}</span>
     `;
   });
-};
-initNavAnimation(document.body.getAttribute('data-lang') || 'es');
-
 
 // Animación botón CTA
 document.querySelectorAll('.nav-cta').forEach(btn => {
-  const activeSpan = btn.querySelector(`span.${lang}`);
-  const text = activeSpan ? activeSpan.textContent.trim() : btn.textContent.trim();
+  const text = btn.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
+               || btn.dataset.textEs;
+  if (!text) return;  // ← si no hay texto guardado no hace nada
   btn.innerHTML = `
     <span class="text-default">${text.split('').map((c, i) =>
       `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
@@ -3133,6 +3250,31 @@ document.querySelectorAll('.nav-cta').forEach(btn => {
     ).join('')}</span>
   `;
 });
+};
+
+
+
+initNavAnimation(document.body.getAttribute('data-lang') || 'es');
+
+// ============ MOBILE NAV ANIMATION ON CLICK ============
+if ('ontouchstart' in window) {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      
+      // Activar animación manualmente
+      link.classList.add('mobile-active');
+      
+      setTimeout(() => {
+        link.classList.remove('mobile-active');
+        document.body.classList.remove('menu-open');
+        // Navegar después de la animación
+        window.location.href = href;
+      }, 400);
+    });
+  });
+}
     </script>
   </body>
 
