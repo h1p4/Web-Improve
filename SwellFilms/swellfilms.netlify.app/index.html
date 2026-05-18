@@ -160,10 +160,6 @@
         display: none !important;
       }
 
-
-
-      /*    */
-
       /* ============================
        NAV
     ============================ */
@@ -374,112 +370,124 @@ background: var(--accent);
         transform: translateY(-6.5px) rotate(-45deg);
       }
 
-     @media (max-width: 900px) {
+@media (max-width: 900px) {
+
   .nav-burger {
     display: flex;
     margin-left: auto;
     position: relative;
-    z-index: 102;
+    z-index: 1001;
   }
+
   .nav-inner {
     grid-template-columns: auto 1fr auto;
   }
 
-  /* Overlay oscuro detrás del menú */
-  .nav-overlay {
-    display: block;
+  /* OVERLAY */
+  .menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 100;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.45s ease;
+    transition: opacity 0.4s ease;
+    z-index: 998;
   }
-  body.menu-open .nav-overlay {
+
+  body.menu-open .menu-overlay {
     opacity: 1;
     pointer-events: auto;
   }
 
-  /* Panel lateral izquierdo — estilo aside de la página objetivo */
+  /* SIDEBAR */
   .nav-links {
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    width: min(72vw, 320px);
-    background: #1a1a1a;
+    top: 16px;
+    right: 16px;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+    height: calc(100vh - 32px);
+
+    background: rgba(255,255,255,0.88);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    border-radius: 28px;
+
+    box-shadow:
+      0 20px 60px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.6);
+
+    padding: 7rem 1.5rem 2rem;
+
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 0;
-    padding: 5rem 2.5rem 3.5rem;
-    height: 100vh;
-    height: 100svh;
-    transform: translateX(-100%);
-    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    z-index: 101;
-    border-right: 1px solid rgba(163,136,98,0.2);
+    gap: 0.4rem;
+
+    transform: translateX(110%);
+    transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+
+    z-index: 999;
   }
+
   body.menu-open .nav-links {
     transform: translateX(0);
   }
 
   .nav-links li {
     width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    overflow: hidden;
+    list-style: none;
   }
-  .nav-links li:last-child {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
+
   .nav-links a {
-    font-size: clamp(1.4rem, 5vw, 2rem) !important;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    color: rgba(255,255,255,0.85) !important;
-    letter-spacing: 0.01em;
-    height: auto !important;
-    padding: 0.9rem 0 !important;
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem 1rem;
+
+    border-radius: 18px;
+
+    color: #1a1a1a !important;
+
+    font-size: 1rem !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+
+    background: transparent !important;
     border: none !important;
-    background: none !important;
-    border-radius: 0 !important;
-    transform: translateX(-2rem);
-    opacity: 0;
-    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1),
-                opacity 0.45s ease,
-                color 0.2s ease;
+
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
   }
+
   .nav-links a:hover {
-    color: var(--accent) !important;
-    background: none !important;
-  }
-  body.menu-open .nav-links a {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  /* Delays escalonados */
-  body.menu-open .nav-links li:nth-child(1) a { transition-delay: 0.08s; }
-  body.menu-open .nav-links li:nth-child(2) a { transition-delay: 0.13s; }
-  body.menu-open .nav-links li:nth-child(3) a { transition-delay: 0.18s; }
-  body.menu-open .nav-links li:nth-child(4) a { transition-delay: 0.23s; }
-  body.menu-open .nav-links li:nth-child(5) a { transition-delay: 0.28s; }
-  body.menu-open .nav-links li:nth-child(6) a { transition-delay: 0.33s; }
-
-  /* Ocultar los spans de animación hover en móvil */
-  .nav-links a .text-hover { display: none !important; }
-  .nav-links a .text-default span {
-    transform: none !important;
-    opacity: 1 !important;
-    color: inherit !important;
+    background: rgba(0,0,0,0.05) !important;
+    transform: translateX(4px);
   }
 
-  .nav-cta { display: none; }
+  /* ICONOS */
+  .nav-links a svg {
+    width: 22px;
+    height: 22px;
+    stroke: #5c5c5c;
+    flex-shrink: 0;
+  }
 
-  /* Icono burger: se convierte en X al abrir */
-  body.menu-open .nav-burger span { background: var(--text); }
+  .nav-cta {
+    display: none;
+  }
+
+  body.menu-open .nav-burger span {
+    background: #111;
+  }
 }
       /* ============================
        HERO
@@ -1443,9 +1451,6 @@ background: var(--accent);
 </div>
 
     <!-- ============= NAV ============= -->
-    <!-- Overlay para cerrar el menú móvil al tocar fuera -->
-    <div class="nav-overlay" id="navOverlay"></div>
-
     <nav class="nav" id="nav">
       <div class="nav-inner">
         <a href="#top" class="nav-logo">
@@ -3014,39 +3019,28 @@ background: var(--accent);
 
       // ============ MOBILE MENU ============
       const burger = document.getElementById("navBurger");
-      const navOverlay = document.getElementById("navOverlay");
-
-      function closeMenu() {
-        document.body.classList.remove('menu-open');
-      }
-      function openMenu() {
-        document.body.classList.add('menu-open');
-      }
-
       burger.addEventListener('click', () => {
-        document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
-      });
+  document.body.classList.toggle('menu-open');
+  // Limpiar animaciones al abrir
+  document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('mobile-active'));
+});
+   document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
 
-      // Cerrar al hacer clic en el overlay
-      if (navOverlay) {
-        navOverlay.addEventListener('click', closeMenu);
-      }
+    // Activar animación
+    link.classList.add('mobile-active');
 
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          if (href && href.startsWith('#')) {
-            e.preventDefault();
-            closeMenu();
-            setTimeout(() => {
-              const target = document.querySelector(href);
-              if (target) target.scrollIntoView({ behavior: 'smooth' });
-            }, 350);
-          } else {
-            closeMenu();
-          }
-        });
-      });
+    setTimeout(() => {
+      // Cerrar menú y navegar después de la animación
+      document.body.classList.remove('menu-open');
+      link.classList.remove('mobile-active');
+      link.blur();
+      window.location.href = href;
+    }, 500);
+  });
+});
 
       // ============ REVEAL ON SCROLL ============
       const io = new IntersectionObserver(
