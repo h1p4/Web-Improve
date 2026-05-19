@@ -250,23 +250,66 @@
 }
 
 /* Texto hover */
+.nav-text {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.nav-text {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a .text-default,
+.nav-links a .text-hover {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a .text-hover {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
+  opacity: 0;
   justify-content: center;
-}
+  pointer-events: none;
+} 
 .nav-links a .text-hover span {
   display: inline-block;
   color: #fff;
   transform: translateY(-100%);
+  justify-items: center;
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
 }
+.nav-links a:hover .text-hover {
+  opacity: 1;
+}
+
 .nav-links a:hover .text-hover span {
   transform: translateY(0);
   opacity: 1;
+} 
+
+.nav-links a:hover .nav-icon {
+  stroke: white;
+}
+
+.nav-links a:hover svg,
+.nav-links a:hover svg * {
+  stroke: white;
+  transition: stroke 0.25s ease, fill 0.25s ease;
+
+}
+
+/* Separar icono del texto en los enlaces de navegación */
+.nav-links a svg {
+  margin-right: 4px;
 }
       .nav-right {
         display: flex;
@@ -370,6 +413,11 @@ background: var(--accent);
         transform: translateY(-6.5px) rotate(-45deg);
       }
 
+  .nav-social {
+  display: none !important;;
+}
+
+
 @media (max-width: 900px) {
 
   .nav-burger {
@@ -380,7 +428,10 @@ background: var(--accent);
   }
 
   .nav-inner {
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   /* OVERLAY */
@@ -402,38 +453,45 @@ background: var(--accent);
   }
 
   /* SIDEBAR */
-  .nav-links {
+   .nav-links {
     position: fixed;
-    top: 16px;
-    right: 16px;
-    width: 320px;
+    top: 5px;
+    right: 2%;
+    width: 55%;
     max-width: calc(100vw - 32px);
-    height: calc(100vh - 32px);
-
+    height: calc(100vh - 10px);
     background: rgba(255,255,255,0.88);
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
     border: 1px solid rgba(255,255,255,0.6);
-
     border-radius: 28px;
-
-    box-shadow:
-      0 20px 60px rgba(0,0,0,0.12),
-      inset 0 1px 0 rgba(255,255,255,0.6);
-
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
     padding: 7rem 1.5rem 2rem;
-
     display: flex;
     flex-direction: column;
+    justify-content: space-between;  /* ← Distribuye el espacio entre los elementos */
     gap: 0.4rem;
-
     transform: translateX(110%);
     transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
-
     z-index: 999;
   }
+
+  /* Contenedor para los botones de navegación (excluyendo redes sociales) */
+.nav-links li:not(.nav-social) {
+  flex-shrink: 0;
+}
+
+/* Las redes sociales las empujamos hacia abajo */
+.nav-links .nav-social {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: auto;  /* Esto debería funcionar ahora con justify-content: space-between */
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  border-bottom: none !important;
+}
 
   body.menu-open .nav-links {
     transform: translateX(0);
@@ -444,12 +502,21 @@ background: var(--accent);
     list-style: none;
   }
 
+  .nav-links i {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.8;
+  color: #555;
+  flex-shrink: 0;
+}
+
+
   .nav-links a {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
-
+justify-content: center;
     padding: 1rem 1rem;
 
     border-radius: 18px;
@@ -469,7 +536,7 @@ background: var(--accent);
   }
 
   .nav-links a:hover {
-    background: rgba(0,0,0,0.05) !important;
+    background: rgba(237, 235, 235, 0.05) !important;
     transform: translateX(4px);
   }
 
@@ -481,6 +548,33 @@ background: var(--accent);
     flex-shrink: 0;
   }
 
+
+  /* Para móvil - efecto al pulsar (active) */
+.nav-links a:active {
+  background: black !important;
+  transform: scale(0.97) !important;
+  transition: all 0.1s ease !important;
+}
+
+/* Para móvil - efecto después de pulsar (focus) */
+.nav-links a:focus {
+  background: black !important;
+  outline: none;
+}
+
+/* Que el texto se ponga blanco al pulsar */
+.nav-links a:active span,
+.nav-links a:active span * {
+  color: white !important;
+}
+
+
+.nav-links a:active svg,
+.nav-links a:active svg * {
+  stroke: white !important;
+  fill: white !important;
+}
+
   .nav-cta {
     display: none;
   }
@@ -488,6 +582,45 @@ background: var(--accent);
   body.menu-open .nav-burger span {
     background: #111;
   }
+
+
+
+.nav-links a:hover .text-default {
+  transform: translateY(120%);
+  opacity: 0;
+}
+
+.nav-links a:hover .text-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-social {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;  /* ← Esto empuja las redes sociales hacia abajo */
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  border-bottom: none !important;
+}
+.nav-social a {
+  width: auto !important;
+  padding: 0.5rem !important;
+  color: #1a1a1a !important;
+}
+.nav-social svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block;
+}
+.nav-social a:hover {
+  color: #111 !important;
+  transform: translateY(-2px) !important;
+  background: none !important;
+}
+
 }
       /* ============================
        HERO
@@ -522,6 +655,14 @@ background: var(--accent);
           .hero {
             padding-top: 7rem;
           }
+          
+          .hero-visual {
+            background-attachment: scroll !important;
+            background: url("images/portfolio/apartment-13.jpg") center/cover no-repeat !important;
+            background-position: 80% center/75% !important;
+             
+          }
+
         }
 
     .hero-top {
@@ -1070,7 +1211,7 @@ background: var(--accent);
     @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
     .about-visual {
       position: relative; aspect-ratio: 4/5;
-      background: url('images/portfolio/villa-19.jpg') center/cover no-repeat;
+      background: url('images/portfolio/villa-17.jpg') center/cover no-repeat;
       border-radius: 2px;
     }
     .about-visual::before {
@@ -1324,34 +1465,7 @@ background: var(--accent);
         color: var(--accent);
       }
 
-      /* ============================
-       WHATSAPP FLOAT
-    ============================ */
-      .wa-float {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 99;
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: #25d366;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow:
-          0 10px 30px rgba(37, 211, 102, 0.4),
-          0 2px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-      }
-      .wa-float:hover {
-        transform: scale(1.08);
-      }
-      .wa-float svg {
-        width: 30px;
-        height: 30px;
-        fill: #fff;
-      }
+    
 
       /* ============================
        LIGHTBOX
@@ -1456,41 +1570,91 @@ background: var(--accent);
         <a href="#top" class="nav-logo">
           <img src="images/logo/logo-black.png" alt="Swell Films" />
         </a>
-        <ul class="nav-links" id="navLinks">
-          <li>
-            <a href="#portfolio"
-              ><span class="es">Portfolio</span
-              ><span class="en">Portfolio</span></a
-            >
-          </li>
-          <li>
-            <a href="#cinematics"
-              ><span class="es">Vídeos</span><span class="en">Films</span></a
-            >
-          </li>
-          <li>
-            <a href="#reels"
-              ><span class="es">Reels</span><span class="en">Reels</span></a
-            >
-          </li>
-          <li>
-            <a href="#services"
-              ><span class="es">Servicios</span
-              ><span class="en">Services</span></a
-            >
-          </li>
-          <li>
-            <a href="#about"
-              ><span class="es">Sobre mí</span><span class="en">About</span></a
-            >
-          </li>
-          <li>
-            <a href="#contact"
-              ><span class="es">Contacto</span
-              ><span class="en">Contact</span></a
-            >
-          </li>
-        </ul>
+<ul class="nav-links" id="navLinks">
+  <li>
+  <a href="#portfolio">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+      <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+    </svg>
+    <span class="es">Portfolio</span><span class="en">Portfolio</span>
+  </a>
+</li>
+<li>
+  <a href="#cinematics">
+
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+  <circle cx="12" cy="13" r="4"/>
+</svg>
+
+   <span class="es">Vídeos</span><span class="en">Films</span>
+
+  </a>
+</li>
+  <li>
+    <a href="#reels">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+  <rect x="8" y="4" width="8" height="1.5" rx="0.5"/>
+  <circle cx="12" cy="18" r="0.5" fill="currentColor" stroke="none"/>
+</svg>
+      <span class="es">Reels</span><span class="en">Reels</span>
+    </a>
+  </li>
+  <li>
+    <a href="#services">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+       <span class="es">Servicios</span>
+    <span class="en">Services</span>
+    </a>
+  </li>
+   <li>
+    <a href="#about">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+       <span class="es">Sobre mí</span>
+    <span class="en">About</span>
+    </a>
+  </li>
+  <li>
+    <a href="#contact">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/>
+</svg>
+       <span class="es">Contacto</span>
+    <span class="en">Contact</span>
+    </a>
+  </li>
+
+  <li class="nav-social">
+  <a href="https://instagram.com/swell_films" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="5"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  </a>
+  <a href="https://wa.me/34608959757" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.9 7.9 0 0 0 5.6-13.6Zm-5.6 12.2a6.5 6.5 0 0 1-3.3-.9l-.2-.1-2.5.7.7-2.4-.2-.2a6.5 6.5 0 1 1 5.5 3Zm3.6-4.9c-.2-.1-1.2-.6-1.3-.6-.2-.1-.3-.1-.5.1s-.5.6-.6.8c-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.6-1s-1.1-1.3-1.2-1.5c-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4 0-.5.2s-.6.6-.6 1.5.7 1.7.8 1.8c.1.1 1.3 2 3.2 2.8.5.2.8.3 1.1.4.5.2.9.1 1.2.1.4 0 1.2-.5 1.3-.9.2-.5.2-.8.1-.9 0-.1-.2-.1-.4-.2Z"/>
+    </svg>
+  </a>
+  <a href="mailto:pacorodriguezparada@gmail.com">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m2 7 10 7 10-7"/>
+    </svg>
+  </a>
+</li>
+</ul>
         <div class="nav-right">
           <div class="lang-switch">
             <button data-lang="es" class="active">ES</button>
@@ -2957,20 +3121,6 @@ background: var(--accent);
       </div>
     </footer>
 
-    <!-- WhatsApp float button -->
-    <a
-      class="wa-float"
-      href="https://wa.me/34608959757"
-      target="_blank"
-      rel="noopener"
-      aria-label="WhatsApp"
-    >
-      <svg viewBox="0 0 24 24">
-        <path
-          d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.9 7.9 0 0 0-6.8 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.9 7.9 0 0 0 5.6-13.6Zm-5.6 12.2a6.5 6.5 0 0 1-3.3-.9l-.2-.1-2.5.7.7-2.4-.2-.2a6.5 6.5 0 1 1 5.5 3Zm3.6-4.9c-.2-.1-1.2-.6-1.3-.6-.2-.1-.3-.1-.5.1s-.5.6-.6.8c-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.6-1s-1.1-1.3-1.2-1.5c-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4 0-.5.2s-.6.6-.6 1.5.7 1.7.8 1.8c.1.1 1.3 2 3.2 2.8.5.2.8.3 1.1.4.5.2.9.1 1.2.1.4 0 1.2-.5 1.3-.9.2-.5.2-.8.1-.9 0-.1-.2-.1-.4-.2Z"
-        />
-      </svg>
-    </a>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -3199,7 +3349,7 @@ background: var(--accent);
 
 // ============ NAV LINKS LETTER ANIMATION ============
 // Guardar textos originales antes de modificar el HTML
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('.nav-links a:not(.nav-social a)').forEach(link => {
   const esSpan = link.querySelector('span.es');
   const enSpan = link.querySelector('span.en');
   if (esSpan) link.dataset.textEs = esSpan.textContent.trim();
@@ -3216,34 +3366,67 @@ document.querySelectorAll('.nav-cta').forEach(btn => {
 });
 
 const initNavAnimation = (lang) => {
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const text = link.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
-                 || link.dataset.textEs
-                 || link.textContent.trim();
-    link.innerHTML = `
-      <span class="text-default">${text.split('').map((c, i) =>
+  document.querySelectorAll('.nav-links a:not(.nav-social a)').forEach(link => {
+    if (!link.dataset.textEs) return;
+    
+    // Buscar si ya existe un contenedor de texto, si no, crearlo
+    let textContainer = link.querySelector('.nav-text');
+    
+    // Si no existe .nav-text, buscar spans de idioma y convertirlos
+    if (!textContainer) {
+      const esSpan = link.querySelector('span.es');
+      const enSpan = link.querySelector('span.en');
+      if (!esSpan && !enSpan) return;
+      
+      // Guardar los textos en data attributes
+      if (esSpan) link.dataset.textEs = esSpan.textContent.trim();
+      if (enSpan) link.dataset.textEn = enSpan.textContent.trim();
+      
+      // Crear la estructura .nav-text
+      textContainer = document.createElement('div');
+      textContainer.className = 'nav-text';
+      
+      // Mover o eliminar los spans originales
+      if (esSpan) esSpan.remove();
+      if (enSpan) enSpan.remove();
+      
+      link.appendChild(textContainer);
+    }
+    
+    // Obtener el texto en el idioma actual
+    const text = link.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`] 
+                 || link.dataset.textEs;
+    
+    const createSpanWithDelay = (textContent) => {
+      return textContent.split('').map((c, i) => 
         `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
-      ).join('')}</span>
-      <span class="text-hover">${text.split('').map((c, i) =>
-        `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
-      ).join('')}</span>
+      ).join('');
+    };
+    
+    // Actualizar SOLO el contenido de .nav-text, sin tocar el SVG
+    textContainer.innerHTML = `
+      <span class="text-default">${createSpanWithDelay(text)}</span>
+      <span class="text-hover">${createSpanWithDelay(text)}</span>
     `;
   });
 
-// Animación botón CTA
-document.querySelectorAll('.nav-cta').forEach(btn => {
-  const text = btn.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
-               || btn.dataset.textEs;
-  if (!text) return;  // ← si no hay texto guardado no hace nada
-  btn.innerHTML = `
-    <span class="text-default">${text.split('').map((c, i) =>
-      `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
-    ).join('')}</span>
-    <span class="text-hover">${text.split('').map((c, i) =>
-      `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
-    ).join('')}</span>
-  `;
-});
+  // Para el botón CTA (no tiene SVG, podemos sobrescribir todo)
+  document.querySelectorAll('.nav-cta').forEach(btn => {
+    const text = btn.dataset[`text${lang.charAt(0).toUpperCase() + lang.slice(1)}`]
+                 || btn.dataset.textEs;
+    if (!text) return;
+    
+    const createSpanWithDelay = (textContent) => {
+      return textContent.split('').map((c, i) => 
+        `<span style="transition-delay:${i * 0.035}s">${c === ' ' ? '&nbsp;' : c}</span>`
+      ).join('');
+    };
+    
+    btn.innerHTML = `
+      <span class="text-default">${createSpanWithDelay(text)}</span>
+      <span class="text-hover">${createSpanWithDelay(text)}</span>
+    `;
+  });
 };
 
 
@@ -3270,6 +3453,11 @@ if ('ontouchstart' in window) {
   });
 }
     </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
   </body>
 
   <!-- Mirrored from swellfilms.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 May 2026 09:44:08 GMT -->
