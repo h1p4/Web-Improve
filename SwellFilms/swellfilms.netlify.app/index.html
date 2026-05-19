@@ -1211,7 +1211,7 @@ justify-content: center;
     @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
     .about-visual {
       position: relative; aspect-ratio: 4/5;
-      background: url('images/portfolio/villa-17.jpg') center/cover no-repeat;
+      background: url('images/portfolio/villa-19.jpg') center/cover no-repeat;
       border-radius: 2px;
     }
     .about-visual::before {
@@ -1223,53 +1223,208 @@ justify-content: center;
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 500; display: block; line-height: 1; }
     .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.5rem; display: block; }
 
-      /* ============================
-       CLIENTES
-    ============================ */
-      .clients {
-        background: var(--bg-alt);
-        padding: 5rem 0;
-      }
-      .clients .overline {
-        display: block;
-        text-align: center;
-        margin-bottom: 2.5rem;
-        color: var(--text-soft);
-      }
-      .clients-row {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2rem;
-        align-items: center;
-        padding-top: 1rem;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        padding: 2.5rem 0;
-      }
-      @media (max-width: 900px) {
-        .clients-row {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
-        }
-      }
-      .client-name {
-        font-family: "Playfair Display", serif;
-        font-size: 1.15rem;
-        font-weight: 500;
-        text-align: center;
-        letter-spacing: 0.02em;
-        color: var(--text);
-        padding: 0.5rem;
-        opacity: 0.7;
-        transition:
-          opacity 0.3s ease,
-          color 0.3s ease;
-      }
-      .client-name:hover {
-        opacity: 1;
-        color: var(--accent);
-      }
+     /* ============================
+   CLIENTES - VERSIÓN PROFESIONAL
+============================ */
+.clients {
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-soft) 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
 
+.clients::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.client-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  min-height: 160px;
+  grid-column: span 2;
+}
+
+.client-card:nth-child(4) {
+  grid-column: 2 / 4;
+}
+.client-card:nth-child(5) {
+  grid-column: 4 / 6;
+}
+.client-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.client-since {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+@media (max-width: 700px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.client-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(163, 136, 98, 0.15);
+  border-radius: 20px;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.client-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.client-card:hover::before {
+  transform: scaleX(1);
+}
+
+.client-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(163, 136, 98, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.client-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: 18px;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.client-card:hover .client-icon {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.client-name {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.client-years {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Trust Badge */
+.trust-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding: 2rem 2rem;
+  background: rgba(163, 136, 98, 0.05);
+  border-radius: 60px;
+  border: 1px solid rgba(163, 136, 98, 0.15);
+}
+
+.trust-item {
+  text-align: center;
+}
+
+.trust-number {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.trust-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(163, 136, 98, 0.3);
+}
+
+@media (max-width: 600px) {
+  .trust-badge {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 30px;
+  }
+  
+  .trust-divider {
+    height: 30px;
+  }
+  
+  .trust-number {
+    font-size: 1.5rem;
+  }
+}
       /* ============================
        CONTACTO
     ============================ */
@@ -2838,22 +2993,94 @@ justify-content: center;
     </div>
   </section>
 
-    <!-- ============= CLIENTES ============= -->
-    <section class="clients">
-      <div class="container">
-        <span class="overline">
-          <span class="es">Inmobiliarias que confían en Swell Films</span>
-          <span class="en">Agencies that trust Swell Films</span>
-        </span>
-        <div class="clients-row">
-          <span class="client-name">Livingstone Estates</span>
-          <span class="client-name">Gilmar</span>
-          <span class="client-name">Way to Live</span>
-          <span class="client-name">Asemar</span>
-          <span class="client-name">Costa del Sol Homes</span>
-        </div>
+ <!-- ============= CLIENTES ============= -->
+<section class="clients" id="clients">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom: 3rem;">
+      <span class="overline">
+        <span class="es">Confianza institucional</span>
+        <span class="en">Institutional trust</span>
+      </span>
+      <h2 class="display" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">
+        <span class="es">Inmobiliarias que confían<br>en Swell Films</span>
+        <span class="en">Agencies that trust<br>Swell Films</span>
+      </h2>
+      <p style="max-width: 480px;">
+        <span class="es">Más de 6 años colaborando con las agencias más exclusivas de la Costa del Sol.</span>
+        <span class="en">Over 6 years collaborating with the most exclusive agencies on the Costa del Sol.</span>
+      </p>
+    </div>
+
+    <div class="clients-grid">
+
+      <!-- Livingstone -->
+      <div class="client-card reveal">
+        <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+          <text x="80" y="28" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="13" letter-spacing="3" fill="#6b1a2a">LIVINGSTONE</text>
+          <line x1="55" y1="34" x2="105" y2="34" stroke="#6b1a2a" stroke-width="0.5"/>
+          <text x="80" y="46" text-anchor="middle" font-family="Playfair Display, serif" font-weight="400" font-size="8" letter-spacing="6" fill="#a38862">ESTATES</text>
+        </svg>
+        <span class="client-since"><span class="es">Desde</span><span class="en">Since</span> 2019</span>
       </div>
-    </section>
+
+      <!-- Gilmar -->
+      <div class="client-card reveal">
+        <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+          <text x="80" y="38" text-anchor="middle" font-family="Playfair Display, serif" font-weight="800" font-size="22" letter-spacing="4" fill="#1a1a1a">GILMAR</text>
+          <text x="80" y="50" text-anchor="middle" font-family="Playfair Display, serif" font-weight="300" font-size="7" letter-spacing="5" fill="#888">REAL ESTATE</text>
+        </svg>
+        <span class="client-since"><span class="es">Desde</span><span class="en">Since</span> 2020</span>
+      </div>
+
+      <!-- Way to Live -->
+      <div class="client-card reveal">
+        <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+          <text x="80" y="28" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-weight="400" font-size="18" fill="#444">Way</text>
+          <text x="80" y="46" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="14" letter-spacing="3" fill="#222">TO LIVE</text>
+        </svg>
+        <span class="client-since"><span class="es">Desde</span><span class="en">Since</span> 2021</span>
+      </div>
+
+      <!-- Asemar -->
+      <div class="client-card reveal">
+        <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+          <text x="80" y="30" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="20" letter-spacing="3" fill="#1a1aaa">ASEMAR</text>
+          <path d="M35 42 Q55 36 80 42 Q105 48 125 42" stroke="#1a1aaa" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="80" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" letter-spacing="4" fill="#1a1aaa">FUENGIROLA</text>
+        </svg>
+        <span class="client-since"><span class="es">Desde</span><span class="en">Since</span> 2018</span>
+      </div>
+
+      <!-- Costa del Sol Homes -->
+      <div class="client-card reveal">
+        <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+          <text x="80" y="22" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="13" letter-spacing="1" fill="#6b3fa0">COSTA DEL SOL</text>
+          <line x1="40" y1="28" x2="120" y2="28" stroke="#6b3fa0" stroke-width="0.5"/>
+          <text x="80" y="42" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="13" letter-spacing="1" fill="#3abfbf">HOMES</text>
+        </svg>
+        <span class="client-since"><span class="es">Desde</span><span class="en">Since</span> 2020</span>
+      </div>
+
+    </div>
+
+    <div class="trust-badge reveal">
+      <div class="trust-item">
+        <span class="trust-number">50+</span>
+        <span class="trust-label"><span class="es">Proyectos realizados</span><span class="en">Projects completed</span></span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-number">100%</span>
+        <span class="trust-label"><span class="es">Clientes satisfechos</span><span class="en">Satisfied clients</span></span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-number">24h</span>
+        <span class="trust-label"><span class="es">Respuesta garantizada</span><span class="en">Response guaranteed</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ============= CONTACTO ============= -->
     <section class="contact" id="contact">
